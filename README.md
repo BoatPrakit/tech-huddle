@@ -46,3 +46,7 @@ Dockerfile is a text file that contains a list of commands (instructions), which
 ### ADD vs COPY
 
 ![](https://linuxhandbook.com/content/images/2021/04/copy-vs-add-1.png)
+
+## Network
+
+![alt text](image.png)
