@@ -38,3 +38,7 @@ Dockerfile is a text file that contains a list of commands (instructions), which
 ### ENTRYPOINT vs CMD
 
 ![](https://miro.medium.com/v2/resize:fit:1400/0*WNIUcRNmcaW_0Rsh)
+
+### ARG vs ENV
+
+![](https://vsupalov.com/images/docker-env-vars/docker_environment_build_args.png)

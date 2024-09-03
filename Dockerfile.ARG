@@ -1,0 +1,6 @@
+FROM alpine:3.18
+
+ARG MSG="Hello World"
+
+RUN echo $MSG
+CMD /bin/sh -c export
