@@ -19,4 +19,22 @@ const syntax = () => {
   })
 }
 
-syntax()
+const err = () => {
+  const e1 = new Promise((resolve, reject) => {
+    reject('Oh no! it error')
+  })
+
+  e1.then((v) => {
+    console.log('in then', v)
+  })
+
+  e1.catch((v) => {
+    console.log('catch', v)
+  })
+}
+
+const main = () => {
+  syntax()
+  //   err()
+}
+main()
