@@ -1,3 +1,4 @@
+import { runApi } from './api'
 import * as promise from './concurrency'
 
 const syncFn = async () => {
@@ -106,8 +107,8 @@ const asyncAwait = async () => {
 }
 
 const main = () => {
-  syncFn()
-  asyncFn()
+  //   syncFn()
+  //   asyncFn()
   //   syntax()
   //   err()
   //   chainedThen()
@@ -116,5 +117,6 @@ const main = () => {
   //   promise.any()
   //   promise.race()
   //   asyncAwait()
+  runApi()
 }
 main()
