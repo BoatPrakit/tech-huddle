@@ -6,7 +6,12 @@ const syntax = () => {
   })
 
   e1.then((v) => {
-    console.log('e1', v)
+    console.log('1:', v)
+    return new Promise((resolve) => {
+      resolve('second promise')
+    })
+  }).then((v) => {
+    console.log('2:', v)
   })
 
   // Example 2
@@ -33,8 +38,26 @@ const err = () => {
   })
 }
 
+const chainedThen = () => {
+  // Example 1
+  const chain1 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 'first')
+  })
+  chain1
+    .then((v) => {
+      console.log('1:', v)
+      return new Promise((resolve) => {
+        setTimeout(resolve, 1000, 'second')
+      })
+    })
+    .then((v) => {
+      console.log('2:', v)
+    })
+}
+
 const main = () => {
   syntax()
   //   err()
+  //   chainedThen()
 }
 main()
