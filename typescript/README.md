@@ -19,3 +19,32 @@ Three States a Promise including
 3. Rejected - Failed, and an error is associated with it.
 
 ![](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png)
+
+## Promise concurrency
+
+The Promise class offers four static methods to facilitate async task concurrency:
+
+- Promise.all()
+
+  - Fulfills when all of the promises fulfill.
+  - Rejects when any of the promises rejects.
+
+- Promise.allSettled()
+
+  - Fulfills when all promises settle.
+
+- Promise.any()
+
+  - Fulfills when any of the promises fulfills.
+  - Rejects when all of the promises reject.
+
+- Promise.race()
+  - Settles when any of the promises settles. In other words, fulfills when any of the promises fulfills
+  - Rejects when any of the promises rejects.
+
+| **Name**                 | **Resolve**                                                                 | **Reject**                                                   |
+| ------------------------ | --------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| **Promise.all()**        | Fulfills when **all** of the promises fulfill.                              | Rejects when **any** of the promises rejects.                |
+| **Promise.allSettled()** | Fulfills when **all** promises have settled (either fulfilled or rejected). | Never rejects; always fulfills with results of all promises. |
+| **Promise.any()**        | Fulfills when **any** of the promises fulfills.                             | Rejects when **all** of the promises reject .                |
+| **Promise.race()**       | Settles (fulfills) when **any** of the promises settles (fulfills).         | Rejects when **any** of the promises rejects.                |
