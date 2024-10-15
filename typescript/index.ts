@@ -1,3 +1,5 @@
+import * as promise from './concurrency'
+
 const syntax = () => {
   // Example 1
   const e1 = new Promise((resolve, reject) => {
@@ -59,5 +61,9 @@ const main = () => {
   syntax()
   //   err()
   //   chainedThen()
+  //   promise.all()
+  //   promise.allSettled()
+  //   promise.any()
+  //   promise.race()
 }
 main()
