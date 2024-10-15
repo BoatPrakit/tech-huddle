@@ -1,5 +1,36 @@
 import * as promise from './concurrency'
 
+const syncFn = async () => {
+  const startTime = Date.now()
+  // prettier-ignore
+  const task1 = async () => new Promise((resolve) => setTimeout(resolve, 10000, 'task1'))
+  const task2 = async () =>
+    new Promise((resolve) => setTimeout(resolve, 7000, 'task1'))
+  const task3 = async () =>
+    new Promise((resolve) => setTimeout(resolve, 5000, 'task1'))
+  const task4 = async () =>
+    new Promise((resolve) => setTimeout(resolve, 6000, 'task1'))
+
+  await task1()
+  await task2()
+  await task3()
+  await task4()
+  const endTime = Date.now()
+  console.log('sync', endTime - startTime)
+}
+
+const asyncFn = async () => {
+  const startTime = Date.now()
+  const task1 = new Promise((resolve) => setTimeout(resolve, 10000, 'task1'))
+  const task2 = new Promise((resolve) => setTimeout(resolve, 7000, 'task1'))
+  const task3 = new Promise((resolve) => setTimeout(resolve, 5000, 'task1'))
+  const task4 = new Promise((resolve) => setTimeout(resolve, 6000, 'task1'))
+
+  await Promise.all([task1, task2, task3, task4])
+  const endTime = Date.now()
+  console.log('async', endTime - startTime)
+}
+
 const syntax = () => {
   // Example 1
   const e1 = new Promise((resolve, reject) => {
@@ -75,13 +106,15 @@ const asyncAwait = async () => {
 }
 
 const main = () => {
-  syntax()
+  syncFn()
+  asyncFn()
+  //   syntax()
   //   err()
   //   chainedThen()
   //   promise.all()
   //   promise.allSettled()
   //   promise.any()
   //   promise.race()
-  asyncAwait()
+  //   asyncAwait()
 }
 main()
