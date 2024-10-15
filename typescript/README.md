@@ -6,6 +6,8 @@ So, JavaScript executes code sequentially. However, many tasks, like fetching da
 
 To prevent the main thread from blocking and ensuring a responsive user interface, JavaScript employs asynchronous programming.
 
+![](https://dexlock.com/wp-content/uploads/2022/11/hand1.png)
+
 ## What is a Promise?
 
 A Promise in JavaScript is like a placeholder for a value that might be available in the future.
