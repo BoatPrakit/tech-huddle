@@ -57,6 +57,23 @@ const chainedThen = () => {
     })
 }
 
+const asyncAwait = async () => {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 'foo')
+  })
+  const v = await promise
+  console.log(v)
+  // reject
+  try {
+    const promise2 = new Promise((resolve, reject) => {
+      setTimeout(reject, 1000, 'oh no! it reject')
+    })
+    await promise2
+  } catch (e) {
+    console.log(e)
+  }
+}
+
 const main = () => {
   syntax()
   //   err()
@@ -65,5 +82,6 @@ const main = () => {
   //   promise.allSettled()
   //   promise.any()
   //   promise.race()
+  asyncAwait()
 }
 main()
